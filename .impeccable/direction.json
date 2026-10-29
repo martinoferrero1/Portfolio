@@ -1,0 +1,50 @@
+{
+  "title": "Dirección visual del portfolio",
+  "question": "Elegí una dirección para el portfolio. Ambas respetan el fondo oscuro, los acentos azul y violeta y el recorrido continuo que pediste.",
+  "options": [
+    {
+      "id": "atlas",
+      "kind": "assigned",
+      "label": "Atlas de conexiones",
+      "lineage": "Un atlas científico contemporáneo",
+      "thesis": "Un recorrido continuo conecta tu trabajo en ingeniería, inteligencia artificial e investigación.",
+      "palette": ["#080911", "#12132a", "#7d78ef", "#76a9ff"],
+      "materials": ["fondo negro profundo", "líneas finas", "luz azul y violeta"],
+      "viewport": "Tu nombre y especialidad ocupan el inicio; una red sutil y tu imagen acompañan el recorrido hacia los proyectos.",
+      "risk": "La red debe permanecer discreta para no competir con el contenido.",
+      "raised": [
+        {"from": "Ciudad nocturna", "raise": "La luz guía el recorrido en lugar de repetirse como decoración."},
+        {"from": "Jardines", "raise": "Cada aparición tiene un ritmo y una dirección claros."},
+        {"from": "Panel espacial", "raise": "La navegación mantiene una estructura reconocible."},
+        {"from": "Billete de viaje", "raise": "La trayectoria conserva una secuencia legible."},
+        {"from": "Tablón digital", "raise": "Los proyectos se exploran sin abandonar la página."},
+        {"from": "Terminal", "raise": "La página permanece continua y legible de principio a fin."}
+      ],
+      "comp": ".impeccable/mocks/decision/atlas.png"
+    },
+    {
+      "id": "editorial",
+      "kind": "pick",
+      "kicker": "PROPUESTA ALTERNATIVA",
+      "label": "Ensayo técnico",
+      "lineage": "Publicación editorial de investigación",
+      "thesis": "Tu trayectoria se lee como una publicación personal, con proyectos y experiencia en primer plano.",
+      "palette": ["#080911", "#14142b", "#8884f4", "#99baff"],
+      "materials": ["tipografía editorial", "reglas finas", "gradientes suaves"],
+      "viewport": "Una presentación tipográfica conduce directamente a una selección de proyectos y tu recorrido.",
+      "risk": "Es una composición más familiar para un portfolio de desarrollo.",
+      "comp": ".impeccable/mocks/decision/editorial.png"
+    },
+    {"id":"city","kind":"challenger","catalogId":"light-shadow-caustics-rain-night-cityscape","label":"Ciudad nocturna","verdict":"declined","thesis":"Una secuencia de luces ordena la trayectoria.","palette":["#101329","#4a67af","#b78459"],"materials":["bandas nocturnas"],"viewport":"Un recorrido entre bandas de luz.","risk":"La ciudad desplazaría el trabajo personal.","case":"Pierde claridad y relación con la actividad profesional.","kept":"La luz orienta el recorrido."},
+    {"id":"garden","kind":"challenger","catalogId":"architecture-inhabitable-space-versailles-bosquet-vistas","label":"Recorrido axial","verdict":"declined","thesis":"La página se descubre en una secuencia de vistas.","palette":["#14221a","#a5a08c","#dad6c5"],"materials":["ejes y recorridos"],"viewport":"Una serie de vistas sucesivas.","risk":"El lenguaje de jardín resulta ajeno al portfolio.","case":"Pierde identificación y claridad.","kept":"Ritmo de aparición deliberado."},
+    {"id":"console","kind":"challenger","catalogId":"pop-culture-shelf-elbow-panel-console","label":"Panel modular","verdict":"declined","thesis":"La navegación se integra en una estructura modular.","palette":["#090912","#a9a1e0","#e3af92"],"materials":["módulos planos"],"viewport":"Un marco rodea los contenidos.","risk":"La estética de consola compite con el tono profesional.","case":"Pierde identificación y claridad.","kept":"Una navegación reconocible."},
+    {"id":"ticket","kind":"challenger","catalogId":"vernacular-ephemera-jet-age-ticket-wallet","label":"Trayectoria impresa","verdict":"declined","thesis":"La experiencia se ordena como un itinerario.","palette":["#14213c","#f3eee4","#ad3440"],"materials":["reglas editoriales"],"viewport":"Cada etapa aparece como un tramo.","risk":"El formato de billete distrae del contenido.","case":"Pierde identificación y claridad.","kept":"Una secuencia clara para la trayectoria."},
+    {"id":"bbs","kind":"challenger","catalogId":"medium-native-ansi-bbs-nightboard","label":"Tablón digital","verdict":"declined","thesis":"Un índice textual conecta todos los proyectos.","palette":["#05070b","#76b4cc","#9e80c7"],"materials":["texto y líneas"],"viewport":"Una página de texto continua.","risk":"La referencia retro limita la expresión contemporánea.","case":"Pierde identificación y claridad.","kept":"Exploración directa sin modales."},
+    {"id":"terminal","kind":"challenger","catalogId":"signals-instruments-phosphor-terminal-midnight","label":"Terminal nocturna","verdict":"declined","thesis":"Toda la página funciona como un registro continuo.","palette":["#07100c","#70a685","#c2e5c8"],"materials":["texto monoespaciado"],"viewport":"Una transcripción recorre la pantalla.","risk":"La metáfora de terminal reduce la legibilidad y formalidad.","case":"Pierde identificación y claridad.","kept":"Continuidad y lectura sencilla."}
+  ],
+  "reroll": {"registers":["safer","bolder"]},
+  "buildPath": {"value":"comp","toggle":true},
+  "canon": true,
+  "canonCard": {"kind":"canon","label":"Portfolio convencional","thesis":"Una presentación profesional con secciones y proyectos claramente identificables.","palette":["#080911","#1b1c2f","#8a86f3"],"materials":["gradientes oscuros","tipografía clara"],"viewport":"Una introducción personal seguida por los proyectos.","risk":"Comparte una estructura conocida con otros portfolios.","comp":".impeccable/mocks/decision/canon.png"},
+  "steer": true
+}

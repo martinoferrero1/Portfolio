@@ -1,0 +1,843 @@
+{
+  "tool": "comp-spec",
+  "version": 1,
+  "createdAt": "2026-10-29T05:52:20.973Z",
+  "comp": ".impeccable/mocks/decision/reading.png",
+  "warnings": [],
+  "uncoveredInkCells": [
+    "H2",
+    "B7",
+    "F7",
+    "G7",
+    "B8",
+    "C9"
+  ],
+  "compSize": {
+    "width": 1536,
+    "height": 1024
+  },
+  "aspect": 1.5,
+  "orientation": "landscape",
+  "palette": [
+    {
+      "hex": "#080814",
+      "coverage": 0.9589
+    },
+    {
+      "hex": "#f3eff1",
+      "coverage": 0.0281
+    },
+    {
+      "hex": "#afafbd",
+      "coverage": 0.0051
+    },
+    {
+      "hex": "#323238",
+      "coverage": 0.0042
+    },
+    {
+      "hex": "#7c7c83",
+      "coverage": 0.0037
+    }
+  ],
+  "bands": [
+    {
+      "y": 0.2,
+      "strength": 0.434
+    },
+    {
+      "y": 0.2588,
+      "strength": 0.307
+    },
+    {
+      "y": 0.2941,
+      "strength": 0.3427
+    },
+    {
+      "y": 0.3176,
+      "strength": 0.3806
+    },
+    {
+      "y": 0.3765,
+      "strength": 0.3882
+    },
+    {
+      "y": 0.7176,
+      "strength": 0.3988
+    },
+    {
+      "y": 0.8118,
+      "strength": 0.3149
+    },
+    {
+      "y": 0.9294,
+      "strength": 0.3484
+    }
+  ],
+  "regions": [
+    {
+      "id": "nav",
+      "kind": "chrome",
+      "note": "navigation links and active underline",
+      "grid": null,
+      "box": {
+        "x": 0.0553,
+        "y": 0.0244,
+        "w": 0.2962,
+        "h": 0.0439
+      },
+      "px": {
+        "x": 85,
+        "y": 25,
+        "w": 455,
+        "h": 45
+      },
+      "aspect": 10.1111,
+      "palette": [
+        {
+          "hex": "#080813",
+          "coverage": 0.9412
+        },
+        {
+          "hex": "#585861",
+          "coverage": 0.0236
+        },
+        {
+          "hex": "#b2b3bc",
+          "coverage": 0.0152
+        },
+        {
+          "hex": "#87878f",
+          "coverage": 0.0111
+        },
+        {
+          "hex": "#2e2e30",
+          "coverage": 0.0089
+        }
+      ],
+      "detail": {
+        "energy": 21.6317
+      },
+      "medium": "semantic",
+      "plate": null,
+      "text": null,
+      "surface": {
+        "flat": false,
+        "rules": false
+      }
+    },
+    {
+      "id": "name",
+      "kind": "text",
+      "note": "Martino Ferrero title",
+      "grid": null,
+      "box": {
+        "x": 0.2865,
+        "y": 0.166,
+        "w": 0.4362,
+        "h": 0.0996
+      },
+      "px": {
+        "x": 440,
+        "y": 170,
+        "w": 670,
+        "h": 102
+      },
+      "aspect": 6.5686,
+      "palette": [
+        {
+          "hex": "#090910",
+          "coverage": 0.7375
+        },
+        {
+          "hex": "#f8f8f8",
+          "coverage": 0.2288
+        },
+        {
+          "hex": "#3e3e40",
+          "coverage": 0.0155
+        },
+        {
+          "hex": "#c3c3c3",
+          "coverage": 0.0103
+        },
+        {
+          "hex": "#7b7d7d",
+          "coverage": 0.0079
+        }
+      ],
+      "detail": {
+        "energy": 74.2682
+      },
+      "medium": "semantic",
+      "plate": null,
+      "text": null,
+      "surface": {
+        "flat": false,
+        "rules": false
+      },
+      "type": {
+        "comp": {
+          "lines": 1,
+          "glyphs": 14,
+          "capHeightPx": 71.4,
+          "inkIsDark": false,
+          "allCaps": false,
+          "advance": 0.5466,
+          "advTall": 0.1542,
+          "advX": 0.6447,
+          "gap": 0.0841,
+          "xRatio": 0.7147,
+          "stemW": 0.154,
+          "contrast": 1.0721,
+          "serif": 0.9845,
+          "densTall": 0.8674,
+          "densX": 0.5323,
+          "weight": 0.8674
+        },
+        "widthClass": "normal",
+        "weightClass": "black",
+        "chosen": {
+          "family": "Geom",
+          "weight": 400,
+          "fontSizePx": 102,
+          "source": "index",
+          "fp": {
+            "lines": 1,
+            "glyphs": 16,
+            "capHeightPx": 72.1,
+            "inkIsDark": true,
+            "allCaps": false,
+            "advance": 0.4439,
+            "advTall": 0.1387,
+            "advX": 0.6311,
+            "gap": 0.1248,
+            "xRatio": 0.6995,
+            "stemW": 0.1429,
+            "contrast": 1.1149,
+            "serif": 1,
+            "densTall": 0.8458,
+            "densX": 0.4638,
+            "weight": 0.8458
+          },
+          "stamp": "3f79074153dc"
+        }
+      }
+    },
+    {
+      "id": "role",
+      "kind": "text",
+      "note": "software engineer role",
+      "grid": null,
+      "box": {
+        "x": 0.2734,
+        "y": 0.2734,
+        "w": 0.4557,
+        "h": 0.0547
+      },
+      "px": {
+        "x": 420,
+        "y": 280,
+        "w": 700,
+        "h": 56
+      },
+      "aspect": 12.5,
+      "palette": [
+        {
+          "hex": "#090a10",
+          "coverage": 0.8142
+        },
+        {
+          "hex": "#e1e4f0",
+          "coverage": 0.1237
+        },
+        {
+          "hex": "#babbc8",
+          "coverage": 0.0264
+        },
+        {
+          "hex": "#505057",
+          "coverage": 0.018
+        },
+        {
+          "hex": "#878895",
+          "coverage": 0.0178
+        }
+      ],
+      "detail": {
+        "energy": 95.1506
+      },
+      "medium": "semantic",
+      "plate": null,
+      "text": null,
+      "surface": {
+        "flat": false,
+        "rules": false
+      },
+      "type": {
+        "comp": {
+          "lines": 1,
+          "glyphs": 24,
+          "capHeightPx": 34.5,
+          "inkIsDark": false,
+          "allCaps": false,
+          "advance": 0.6087,
+          "advTall": 0.6957,
+          "advX": 0.5797,
+          "gap": 0.1159,
+          "xRatio": 0.7003,
+          "stemW": 0.1198,
+          "contrast": 1.077,
+          "serif": 0.9399,
+          "densTall": 0.4066,
+          "densX": 0.4568,
+          "weight": 0.4066
+        },
+        "widthClass": "condensed",
+        "weightClass": "regular"
+      }
+    },
+    {
+      "id": "intro",
+      "kind": "text",
+      "note": "introductory sentence",
+      "grid": null,
+      "box": {
+        "x": 0.2122,
+        "y": 0.3457,
+        "w": 0.5762,
+        "h": 0.041
+      },
+      "px": {
+        "x": 326,
+        "y": 354,
+        "w": 885,
+        "h": 42
+      },
+      "aspect": 21.0714,
+      "palette": [
+        {
+          "hex": "#09090f",
+          "coverage": 0.8324
+        },
+        {
+          "hex": "#aeb4c7",
+          "coverage": 0.0528
+        },
+        {
+          "hex": "#5f6371",
+          "coverage": 0.0445
+        },
+        {
+          "hex": "#8c90a0",
+          "coverage": 0.0374
+        },
+        {
+          "hex": "#292a34",
+          "coverage": 0.033
+        }
+      ],
+      "detail": {
+        "energy": 45.0095
+      },
+      "medium": "semantic",
+      "plate": null,
+      "text": null,
+      "surface": {
+        "flat": false,
+        "rules": false
+      },
+      "type": {
+        "comp": {
+          "lines": 1,
+          "glyphs": 57,
+          "capHeightPx": 20.3,
+          "inkIsDark": false,
+          "allCaps": false,
+          "advance": 0.5899,
+          "advTall": 0.2827,
+          "advX": 0.5899,
+          "gap": 0.1475,
+          "xRatio": 0.6753,
+          "stemW": 0.1281,
+          "contrast": 1.1098,
+          "serif": 0.9998,
+          "densTall": 0.5523,
+          "densX": 0.4821,
+          "weight": 0.5523
+        },
+        "widthClass": "normal",
+        "weightClass": "medium"
+      }
+    },
+    {
+      "id": "action",
+      "kind": "control",
+      "note": "outlined explore my work link",
+      "grid": null,
+      "box": {
+        "x": 0.4102,
+        "y": 0.416,
+        "w": 0.1823,
+        "h": 0.0732
+      },
+      "px": {
+        "x": 630,
+        "y": 426,
+        "w": 280,
+        "h": 75
+      },
+      "aspect": 3.7333,
+      "palette": [
+        {
+          "hex": "#09090f",
+          "coverage": 0.92
+        },
+        {
+          "hex": "#455da7",
+          "coverage": 0.0378
+        },
+        {
+          "hex": "#dae9f6",
+          "coverage": 0.0157
+        },
+        {
+          "hex": "#2f384b",
+          "coverage": 0.0144
+        },
+        {
+          "hex": "#110828",
+          "coverage": 0.0122
+        }
+      ],
+      "detail": {
+        "energy": 23.3213
+      },
+      "medium": "semantic",
+      "plate": null,
+      "text": null,
+      "surface": {
+        "flat": false,
+        "rules": false
+      }
+    },
+    {
+      "id": "connections",
+      "kind": "chrome",
+      "note": "subtle curved lines and points",
+      "grid": null,
+      "box": {
+        "x": 0,
+        "y": 0.4043,
+        "w": 1,
+        "h": 0.1855
+      },
+      "px": {
+        "x": 0,
+        "y": 414,
+        "w": 1536,
+        "h": 190
+      },
+      "aspect": 8.0842,
+      "palette": [
+        {
+          "hex": "#080814",
+          "coverage": 0.998
+        },
+        {
+          "hex": "#485fa8",
+          "coverage": 0.002
+        }
+      ],
+      "detail": {
+        "energy": 2.6914
+      },
+      "medium": "semantic",
+      "plate": null,
+      "text": null,
+      "surface": {
+        "flat": true,
+        "rules": false
+      }
+    },
+    {
+      "id": "about-label",
+      "kind": "text",
+      "note": "About section label",
+      "grid": null,
+      "box": {
+        "x": 0.125,
+        "y": 0.6553,
+        "w": 0.0521,
+        "h": 0.0254
+      },
+      "px": {
+        "x": 192,
+        "y": 671,
+        "w": 80,
+        "h": 26
+      },
+      "aspect": 3.0769,
+      "palette": [
+        {
+          "hex": "#090913",
+          "coverage": 0.9012
+        },
+        {
+          "hex": "#484958",
+          "coverage": 0.0453
+        },
+        {
+          "hex": "#24222e",
+          "coverage": 0.0329
+        },
+        {
+          "hex": "#727585",
+          "coverage": 0.0206
+        }
+      ],
+      "detail": {
+        "energy": 8.4091
+      },
+      "medium": "semantic",
+      "plate": null,
+      "text": null,
+      "surface": {
+        "flat": false,
+        "rules": false
+      },
+      "type": {
+        "comp": {
+          "lines": 1,
+          "glyphs": 5,
+          "capHeightPx": 10.4,
+          "inkIsDark": false,
+          "allCaps": true,
+          "advance": 0.8029,
+          "advTall": 0.8029,
+          "advX": null,
+          "gap": 0.3372,
+          "xRatio": null,
+          "stemW": 0.1852,
+          "contrast": 1.0258,
+          "serif": null,
+          "densTall": 0.4661,
+          "densX": null,
+          "weight": 0.4661
+        },
+        "widthClass": "wide",
+        "weightClass": "regular"
+      }
+    },
+    {
+      "id": "about-rule",
+      "kind": "chrome",
+      "note": "fine horizontal divider",
+      "grid": null,
+      "box": {
+        "x": 0.1842,
+        "y": 0.6641,
+        "w": 0.6855,
+        "h": 0.0049
+      },
+      "px": {
+        "x": 283,
+        "y": 680,
+        "w": 1053,
+        "h": 5
+      },
+      "aspect": 210.6,
+      "palette": [
+        {
+          "hex": "#383848",
+          "coverage": 0.5
+        },
+        {
+          "hex": "#080815",
+          "coverage": 0.5
+        }
+      ],
+      "detail": {
+        "energy": 6.5692
+      },
+      "medium": "semantic",
+      "plate": null,
+      "text": null,
+      "surface": {
+        "flat": false,
+        "rules": true
+      }
+    },
+    {
+      "id": "portrait",
+      "kind": "image",
+      "note": "small personal caricature portrait",
+      "grid": null,
+      "box": {
+        "x": 0.1693,
+        "y": 0.7129,
+        "w": 0.1367,
+        "h": 0.2148
+      },
+      "px": {
+        "x": 260,
+        "y": 730,
+        "w": 210,
+        "h": 220
+      },
+      "aspect": 0.9545,
+      "palette": [
+        {
+          "hex": "#f3ebec",
+          "coverage": 0.5911
+        },
+        {
+          "hex": "#f2b28f",
+          "coverage": 0.1805
+        },
+        {
+          "hex": "#100e14",
+          "coverage": 0.167
+        },
+        {
+          "hex": "#3e2421",
+          "coverage": 0.0351
+        },
+        {
+          "hex": "#4a3121",
+          "coverage": 0.0262
+        }
+      ],
+      "detail": {
+        "energy": 21.054
+      },
+      "medium": "raster",
+      "plate": "assets/plates/portrait.png",
+      "text": null
+    },
+    {
+      "id": "about-title",
+      "kind": "text",
+      "note": "Hi, I'm Martino heading",
+      "grid": null,
+      "box": {
+        "x": 0.332,
+        "y": 0.7129,
+        "w": 0.1855,
+        "h": 0.0469
+      },
+      "px": {
+        "x": 510,
+        "y": 730,
+        "w": 285,
+        "h": 48
+      },
+      "aspect": 5.9375,
+      "palette": [
+        {
+          "hex": "#0a0a12",
+          "coverage": 0.8315
+        },
+        {
+          "hex": "#f5f4f5",
+          "coverage": 0.1143
+        },
+        {
+          "hex": "#b5b8b8",
+          "coverage": 0.0212
+        },
+        {
+          "hex": "#464749",
+          "coverage": 0.0165
+        },
+        {
+          "hex": "#777779",
+          "coverage": 0.0165
+        }
+      ],
+      "detail": {
+        "energy": 53.1642
+      },
+      "medium": "semantic",
+      "plate": null,
+      "text": null,
+      "surface": {
+        "flat": false,
+        "rules": false
+      },
+      "type": {
+        "comp": {
+          "lines": 1,
+          "glyphs": 13,
+          "capHeightPx": 26.7,
+          "inkIsDark": false,
+          "allCaps": false,
+          "advance": 0.4313,
+          "advTall": 0.15,
+          "advX": 0.6375,
+          "gap": 0.15,
+          "xRatio": 0.7178,
+          "stemW": 0.1447,
+          "contrast": 1.0549,
+          "serif": 0.8369,
+          "densTall": 0.7978,
+          "densX": 0.4836,
+          "weight": 0.7978
+        },
+        "widthClass": "normal",
+        "weightClass": "black"
+      }
+    },
+    {
+      "id": "about-copy-a",
+      "kind": "text",
+      "note": "first biography paragraph",
+      "grid": null,
+      "box": {
+        "x": 0.332,
+        "y": 0.7734,
+        "w": 0.4102,
+        "h": 0.084
+      },
+      "px": {
+        "x": 510,
+        "y": 792,
+        "w": 630,
+        "h": 86
+      },
+      "aspect": 7.3256,
+      "palette": [
+        {
+          "hex": "#0a0a11",
+          "coverage": 0.8468
+        },
+        {
+          "hex": "#b4b6c0",
+          "coverage": 0.0799
+        },
+        {
+          "hex": "#777980",
+          "coverage": 0.0374
+        },
+        {
+          "hex": "#484a4e",
+          "coverage": 0.0275
+        },
+        {
+          "hex": "#2e2e3e",
+          "coverage": 0.0084
+        }
+      ],
+      "detail": {
+        "energy": 47.3157
+      },
+      "medium": "semantic",
+      "plate": null,
+      "text": null,
+      "surface": {
+        "flat": false,
+        "rules": false
+      },
+      "type": {
+        "comp": {
+          "lines": 3,
+          "glyphs": 158,
+          "capHeightPx": 15,
+          "inkIsDark": false,
+          "allCaps": false,
+          "advance": 0.5661,
+          "advTall": 0.3663,
+          "advX": 0.5988,
+          "gap": 0.1332,
+          "xRatio": 0.6859,
+          "stemW": 0.1399,
+          "contrast": 1.0438,
+          "serif": 0.346,
+          "densTall": 0.4769,
+          "densX": 0.5242,
+          "weight": 0.4769
+        },
+        "widthClass": "normal",
+        "weightClass": "regular"
+      }
+    },
+    {
+      "id": "about-copy-b",
+      "kind": "text",
+      "note": "second biography paragraph",
+      "grid": null,
+      "box": {
+        "x": 0.332,
+        "y": 0.876,
+        "w": 0.4102,
+        "h": 0.0879
+      },
+      "px": {
+        "x": 510,
+        "y": 897,
+        "w": 630,
+        "h": 90
+      },
+      "aspect": 7,
+      "palette": [
+        {
+          "hex": "#090912",
+          "coverage": 0.878
+        },
+        {
+          "hex": "#afb2bc",
+          "coverage": 0.051
+        },
+        {
+          "hex": "#7b7e87",
+          "coverage": 0.0241
+        },
+        {
+          "hex": "#55575c",
+          "coverage": 0.0239
+        },
+        {
+          "hex": "#2e2e34",
+          "coverage": 0.023
+        }
+      ],
+      "detail": {
+        "energy": 36.4378
+      },
+      "medium": "semantic",
+      "plate": null,
+      "text": null,
+      "surface": {
+        "flat": false,
+        "rules": false
+      },
+      "type": {
+        "comp": {
+          "lines": 3,
+          "glyphs": 132,
+          "capHeightPx": 14.9,
+          "inkIsDark": false,
+          "allCaps": false,
+          "advance": 0.5739,
+          "advTall": 0.1672,
+          "advX": 0.6019,
+          "gap": 0.1013,
+          "xRatio": 0.7156,
+          "stemW": 0.1405,
+          "contrast": 1.0425,
+          "serif": 0.7257,
+          "densTall": 0.7049,
+          "densX": 0.514,
+          "weight": 0.7049
+        },
+        "widthClass": "normal",
+        "weightClass": "black"
+      }
+    }
+  ],
+  "compSha256": "96c85641511ecd3fc9d27a462647285d8ab2ffdb3ff3c87f8b7f6d63eee7e37b",
+  "regionsSource": {
+    "path": ".impeccable/regions.json",
+    "sha256": "62c8457267099a050142164f6462833d65185b77492d8bf81fa0b9b4d89e1d1d"
+  }
+}

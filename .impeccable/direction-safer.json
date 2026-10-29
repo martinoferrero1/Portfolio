@@ -1,0 +1,13 @@
+{
+  "title":"Una dirección más sobria",
+  "question":"Estas propuestas mantienen el contenido centrado, el fondo casi negro y una imagen pequeña. La diferencia está en el ritmo del recorrido.",
+  "options":[
+    {"id":"reading","kind":"grounded","label":"Lectura continua","lineage":"Portfolio profesional centrado","thesis":"Tu perfil y tus proyectos se presentan en una columna amplia y centrada, con movimiento discreto al recorrerla.","palette":["#09090d","#171823","#f2f2f4","#9294b5"],"materials":["negro mate","tipografía sans serif","líneas finas"],"viewport":"Una presentación centrada abre el recorrido; la imagen aparece más abajo, en escala pequeña.","risk":"Su carácter depende de la precisión de la tipografía, el ritmo y las animaciones.","comp":".impeccable/mocks/decision/reading.png"},
+    {"id":"timeline","kind":"grounded","label":"Trayectoria en movimiento","lineage":"Narración profesional con línea de tiempo","thesis":"Una secuencia centrada conecta experiencia y proyectos con apariciones escalonadas y desplazamiento suave.","palette":["#08090c","#161824","#f3f3f5","#858bb6"],"materials":["fondo oscuro","texto blanco","divisores discretos"],"viewport":"Tu presentación centrada conduce a una trayectoria sencilla y sin tarjetas.","risk":"La línea de tiempo debe seguir siendo fácil de leer en pantallas pequeñas.","comp":".impeccable/mocks/decision/timeline.png"}
+  ],
+  "reroll":{"registers":["safer","bolder"]},
+  "buildPath":{"value":"comp","toggle":true},
+  "canon":true,
+  "canonCard":{"kind":"canon","label":"Portfolio clásico","thesis":"Una presentación centrada, sencilla y profesional, con proyectos ordenados en una página continua.","palette":["#09090c","#161722","#f4f4f5","#9a9cb6"],"materials":["negro mate","tipografía clara","acentos mínimos"],"viewport":"Nombre, especialidad y enlaces centrados, seguidos por una presentación personal.","risk":"Su diseño es deliberadamente familiar.","comp":".impeccable/mocks/decision/classic.png"},
+  "steer":true
+}

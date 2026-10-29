@@ -1,0 +1,17 @@
+{
+  "allowUncovered": true,
+  "regions": [
+    {"id":"nav", "kind":"chrome", "pixelBox":{"x":85,"y":25,"w":455,"h":45}, "note":"navigation links and active underline"},
+    {"id":"name", "kind":"text", "pixelBox":{"x":440,"y":170,"w":670,"h":102}, "note":"Martino Ferrero title"},
+    {"id":"role", "kind":"text", "pixelBox":{"x":420,"y":280,"w":700,"h":56}, "note":"software engineer role"},
+    {"id":"intro", "kind":"text", "pixelBox":{"x":326,"y":354,"w":885,"h":42}, "note":"introductory sentence"},
+    {"id":"action", "kind":"control", "pixelBox":{"x":630,"y":426,"w":280,"h":75}, "note":"outlined explore my work link"},
+    {"id":"connections", "kind":"chrome", "pixelBox":{"x":0,"y":414,"w":1536,"h":190}, "note":"subtle curved lines and points"},
+    {"id":"about-label", "kind":"text", "pixelBox":{"x":192,"y":671,"w":80,"h":26}, "note":"About section label"},
+    {"id":"about-rule", "kind":"chrome", "pixelBox":{"x":283,"y":680,"w":1053,"h":5}, "note":"fine horizontal divider"},
+    {"id":"portrait", "kind":"image", "pixelBox":{"x":260,"y":730,"w":210,"h":220}, "note":"small personal caricature portrait"},
+    {"id":"about-title", "kind":"text", "pixelBox":{"x":510,"y":730,"w":285,"h":48}, "note":"Hi, I'm Martino heading"},
+    {"id":"about-copy-a", "kind":"text", "pixelBox":{"x":510,"y":792,"w":630,"h":86}, "note":"first biography paragraph"},
+    {"id":"about-copy-b", "kind":"text", "pixelBox":{"x":510,"y":897,"w":630,"h":90}, "note":"second biography paragraph"}
+  ]
+}
