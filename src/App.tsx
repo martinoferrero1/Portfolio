@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import portrait from '../assets/plates/portrait.png'
 
 const navigation = [
@@ -59,12 +59,138 @@ function Arrow() {
 }
 
 function Connections() {
-  return <svg className="connections" viewBox="0 0 1440 220" preserveAspectRatio="none" aria-hidden="true">
-    <path d="M-40 80 C180 25 310 90 510 145 S920 170 1480 22" />
-    <path d="M-30 135 C260 65 350 95 565 160 S1000 165 1475 78" />
-    <path d="M-20 70 C250 55 330 110 560 164 S1100 145 1460 20" />
-    <g><circle cx="250" cy="92" r="2.6"/><circle cx="389" cy="139" r="2"/><circle cx="1184" cy="141" r="2.4"/><circle cx="1303" cy="92" r="2.8"/></g>
-  </svg>
+  const canvasRef = useRef<HTMLCanvasElement>(null)
+
+  useEffect(() => {
+    const canvas = canvasRef.current
+    const hero = canvas?.parentElement
+    const context = canvas?.getContext('2d')
+    if (!canvas || !hero || !context) return
+
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)')
+    const pointer = { x: -1000, y: -1000 }
+    type Node = { x: number; y: number; vx: number; vy: number; radius: number }
+    let nodes: Node[] = []
+    let width = 0
+    let height = 0
+    let frame = 0
+    let isVisible = true
+    const linkDistance = 138
+
+    // Adapted from ThreeUI's MIT-licensed Constellation Field (Meng To):
+    // https://github.com/MengTo/threeui/tree/main/src/shaders/constellation-field
+    const draw = () => {
+      frame = 0
+      context.clearRect(0, 0, width, height)
+      context.strokeStyle = '#7484c9'
+      context.lineWidth = 0.8
+      context.lineCap = 'round'
+
+      for (let i = 0; i < nodes.length; i++) {
+        for (let j = i + 1; j < nodes.length; j++) {
+          const distance = Math.hypot(nodes[i].x - nodes[j].x, nodes[i].y - nodes[j].y)
+          if (distance < linkDistance) {
+            context.beginPath()
+            context.moveTo(nodes[i].x, nodes[i].y)
+            context.lineTo(nodes[j].x, nodes[j].y)
+            context.globalAlpha = 0.08 + (1 - distance / linkDistance) * 0.22
+            context.stroke()
+          }
+        }
+      }
+
+      nodes.forEach((node) => {
+        if (!reduceMotion.matches) {
+          node.x += node.vx
+          node.y += node.vy
+          if (node.x < 0 || node.x > width) node.vx *= -1
+          if (node.y < 0 || node.y > height) node.vy *= -1
+
+          const pointerDistance = Math.hypot(node.x - pointer.x, node.y - pointer.y)
+          if (pointerDistance < 190) {
+            node.x -= (node.x - pointer.x) * 0.003
+            node.y -= (node.y - pointer.y) * 0.003
+          }
+        }
+
+        context.beginPath()
+        context.arc(node.x, node.y, node.radius * 2, 0, Math.PI * 2)
+        context.fillStyle = 'rgba(157, 171, 239, 0.12)'
+        context.fill()
+        context.beginPath()
+        context.arc(node.x, node.y, node.radius, 0, Math.PI * 2)
+        context.fillStyle = 'rgba(174, 187, 246, 0.58)'
+        context.fill()
+      })
+
+      context.globalAlpha = 1
+      if (!reduceMotion.matches && isVisible) frame = window.requestAnimationFrame(draw)
+    }
+
+    const resize = () => {
+      const bounds = hero.getBoundingClientRect()
+      const dpr = Math.min(window.devicePixelRatio || 1, 1.5)
+      width = bounds.width
+      height = bounds.height
+      canvas.width = Math.max(1, Math.floor(width * dpr))
+      canvas.height = Math.max(1, Math.floor(height * dpr))
+      canvas.style.width = `${width}px`
+      canvas.style.height = `${height}px`
+      context.setTransform(dpr, 0, 0, dpr, 0, 0)
+      const count = Math.max(18, Math.min(46, Math.round((width * height / 10000) * 0.42)))
+      nodes = Array.from({ length: count }, () => ({
+        x: Math.random() * width,
+        y: Math.random() * height,
+        vx: (Math.random() - 0.5) * 0.18,
+        vy: (Math.random() - 0.5) * 0.18,
+        radius: Math.random() * 1.3 + 1.1,
+      }))
+
+      if (reduceMotion.matches) draw()
+      else if (isVisible && !frame) frame = window.requestAnimationFrame(draw)
+    }
+
+    const onPointerMove = (event: PointerEvent) => {
+      const bounds = hero.getBoundingClientRect()
+      pointer.x = event.clientX - bounds.left
+      pointer.y = event.clientY - bounds.top
+    }
+    const onPointerLeave = () => { pointer.x = -1000; pointer.y = -1000 }
+    const onMotionChange = () => {
+      if (frame) window.cancelAnimationFrame(frame)
+      frame = 0
+      if (reduceMotion.matches) draw()
+      else if (isVisible) frame = window.requestAnimationFrame(draw)
+    }
+    const visibilityObserver = new IntersectionObserver(([entry]) => {
+      isVisible = entry.isIntersecting
+      if (!isVisible && frame) {
+        window.cancelAnimationFrame(frame)
+        frame = 0
+      } else if (isVisible && !reduceMotion.matches && !frame) {
+        frame = window.requestAnimationFrame(draw)
+      }
+    })
+    const resizeObserver = new ResizeObserver(resize)
+
+    resizeObserver.observe(hero)
+    visibilityObserver.observe(hero)
+    hero.addEventListener('pointermove', onPointerMove)
+    hero.addEventListener('pointerleave', onPointerLeave)
+    reduceMotion.addEventListener('change', onMotionChange)
+    resize()
+
+    return () => {
+      resizeObserver.disconnect()
+      visibilityObserver.disconnect()
+      hero.removeEventListener('pointermove', onPointerMove)
+      hero.removeEventListener('pointerleave', onPointerLeave)
+      reduceMotion.removeEventListener('change', onMotionChange)
+      if (frame) window.cancelAnimationFrame(frame)
+    }
+  }, [])
+
+  return <canvas ref={canvasRef} className="connections" aria-hidden="true" />
 }
 
 function SectionTitle({ children }: { children: string }) {

@@ -43,13 +43,7 @@ svg { display: block; }
 .outline-link:hover { background: #181d30; border-color: #a2b0ef; transform: translateY(-2px); }
 .outline-link svg, .text-link svg, .contact-links svg, .contact-email svg { width: 19px; height: 19px; flex: none; transition: transform .25s ease; }
 .outline-link:hover svg, .text-link:hover svg, .contact-links a:hover svg, .contact-email:hover svg { transform: translateX(4px); }
-.connections { position: absolute; left: 0; right: 0; bottom: 24px; width: 100%; height: 205px; pointer-events: none; opacity: .7; }
-.connections path { fill: none; stroke: #333b66; stroke-width: .7; vector-effect: non-scaling-stroke; }
-.connections circle { fill: #8797e6; }
-@supports (animation-timeline: scroll()) {
-  .connections { animation: drift linear both; animation-timeline: scroll(root); animation-range: 0 800px; }
-  @keyframes drift { from { transform: translateY(0); } to { transform: translateY(55px); } }
-}
+.connections { position: absolute; z-index: 0; inset: 0; display: block; pointer-events: none; }
 
 .page-content { width: min(1132px, calc(100% - 48px)); margin: 0 auto; }
 .content-section { scroll-margin-top: 98px; padding-top: 0; margin-bottom: clamp(125px, 15vw, 205px); }
@@ -116,7 +110,6 @@ svg { display: block; }
   .hero-role { margin-top: 17px; font-size: clamp(1.25rem, 5vw, 1.8rem); }
   .hero-intro { max-width: 34ch; margin-top: 22px; font-size: 16px; }
   .outline-link { min-height: 54px; margin-top: 29px; font-size: 16px; }
-  .connections { height: 150px; bottom: 24px; }
   .page-content { width: calc(100% - 48px); }
   .content-section { margin-bottom: 120px; }
   .section-title { margin-bottom: 32px; }
