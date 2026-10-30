@@ -69,13 +69,15 @@ function Connections() {
 
     const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)')
     const pointer = { x: -1000, y: -1000 }
-    type Node = { x: number; y: number; vx: number; vy: number; radius: number }
+    type Node = { x: number; y: number; vx: number; vy: number; radius: number; hover: number }
     let nodes: Node[] = []
     let width = 0
     let height = 0
     let frame = 0
     let isVisible = true
     const linkDistance = 138
+    const hoverRadius = 165
+    const hoverLinkDistance = 175
 
     // Adapted from ThreeUI's MIT-licensed Constellation Field (Meng To):
     // https://github.com/MengTo/threeui/tree/main/src/shaders/constellation-field
@@ -86,31 +88,36 @@ function Connections() {
       context.lineWidth = 0.8
       context.lineCap = 'round'
 
+      nodes.forEach((node) => {
+        const distance = Math.hypot(node.x - pointer.x, node.y - pointer.y)
+        const target = reduceMotion.matches ? 0 : Math.max(0, Math.min(1, (hoverRadius - distance) / 35))
+        node.hover += (target - node.hover) * 0.12
+      })
+
       for (let i = 0; i < nodes.length; i++) {
         for (let j = i + 1; j < nodes.length; j++) {
           const distance = Math.hypot(nodes[i].x - nodes[j].x, nodes[i].y - nodes[j].y)
-          if (distance < linkDistance) {
+          const baseAlpha = distance < linkDistance ? 0.08 + (1 - distance / linkDistance) * 0.22 : 0
+          const hoverAlpha = distance < hoverLinkDistance
+            ? Math.min(nodes[i].hover, nodes[j].hover) * (0.2 + (1 - distance / hoverLinkDistance) * 0.25)
+            : 0
+          if (baseAlpha || hoverAlpha > 0.001) {
             context.beginPath()
             context.moveTo(nodes[i].x, nodes[i].y)
             context.lineTo(nodes[j].x, nodes[j].y)
-            context.globalAlpha = 0.08 + (1 - distance / linkDistance) * 0.22
+            context.globalAlpha = Math.min(0.55, baseAlpha + hoverAlpha)
             context.stroke()
           }
         }
       }
 
+      context.globalAlpha = 1
       nodes.forEach((node) => {
         if (!reduceMotion.matches) {
           node.x += node.vx
           node.y += node.vy
           if (node.x < 0 || node.x > width) node.vx *= -1
           if (node.y < 0 || node.y > height) node.vy *= -1
-
-          const pointerDistance = Math.hypot(node.x - pointer.x, node.y - pointer.y)
-          if (pointerDistance < 190) {
-            node.x -= (node.x - pointer.x) * 0.003
-            node.y -= (node.y - pointer.y) * 0.003
-          }
         }
 
         context.beginPath()
@@ -143,7 +150,8 @@ function Connections() {
         y: Math.random() * height,
         vx: (Math.random() - 0.5) * 0.18,
         vy: (Math.random() - 0.5) * 0.18,
-        radius: Math.random() * 1.3 + 1.1,
+        radius: Math.random() * 1.58 + 1.15,
+        hover: 0,
       }))
 
       if (reduceMotion.matches) draw()
@@ -151,6 +159,7 @@ function Connections() {
     }
 
     const onPointerMove = (event: PointerEvent) => {
+      if (event.pointerType === 'touch') return
       const bounds = hero.getBoundingClientRect()
       pointer.x = event.clientX - bounds.left
       pointer.y = event.clientY - bounds.top
@@ -167,6 +176,7 @@ function Connections() {
       if (!isVisible && frame) {
         window.cancelAnimationFrame(frame)
         frame = 0
+        onPointerLeave()
       } else if (isVisible && !reduceMotion.matches && !frame) {
         frame = window.requestAnimationFrame(draw)
       }
