@@ -7,9 +7,9 @@ type Theme = 'dark' | 'light'
 const copy = {
   en: {
     navigation: ['Home', 'About', 'Projects', 'Skills', 'Contact'], navLabel: 'Main navigation', languageLabel: 'Choose language', lightTheme: 'Switch to light mode', darkTheme: 'Switch to dark mode', skip: 'Skip to content',
-    role: 'Software Engineer · AI & Backend', intro: 'I build software and work on applied AI and medical imaging research.', explore: 'Explore my work',
-    about: 'About', aboutTitle: 'Hi, I’m Martino.', bio1: 'I’m a systems engineer from Tandil, Argentina, focused on backend development and artificial intelligence. I enjoy building software that brings research and practical needs together.',
-    bio2: 'Alongside my work as an AI backend engineer, I’m pursuing a PhD at INTIA–UNICEN, researching AI for medical image processing and related projects in the research group.', cv: 'Download my CV', experience: 'Experience', education: 'Education',
+    role: 'Software Engineer · AI & Backend', explore: 'Explore my work',
+    about: 'About me', aboutTitle: 'Hi, I’m Martino.', bio1: 'I’m a systems engineer from Tandil, Argentina, focused on backend development and artificial intelligence. I enjoy building innovative software that makes a meaningful, positive difference for the people who use it. I’m also drawn to entrepreneurship and bringing new ideas to life, which has led me to take part in several projects. I’m currently working on two of them.',
+    bio2: 'Alongside these projects, I’m pursuing a PhD at INTIA–UNICEN, where I research the use of AI in medical image processing and other related areas.', cv: 'Download my CV', experience: 'Experience', education: 'Education',
     educationItems: ['PhD research in medical imaging and AI', 'Bachelor’s Degree in Systems Engineering', 'University Diploma in Artificial Intelligence'], educationStatus: ['INTIA · UNICEN — In progress', 'UNICEN — 2020–2025', 'UNICEN — 2025'],
     projects: 'Projects', selectedWork: 'Selected work', projectsIntro: 'A selection of projects across software, AI and research.', skills: 'Skills', tools: 'Tools I work with', skillsIntro: 'Technologies and practices from my work and research.',
     contact: 'Contact', contactTitle: 'Let’s get in touch.', contactIntro: 'Have a project, opportunity, or question in mind? I’d be glad to hear from you.', backToTop: 'Back to top', portraitAlt: 'Illustrated portrait of Martino Ferrero',
@@ -26,9 +26,9 @@ const copy = {
   },
   es: {
     navigation: ['Inicio', 'Sobre mí', 'Proyectos', 'Habilidades', 'Contacto'], navLabel: 'Navegación principal', languageLabel: 'Elegir idioma', lightTheme: 'Cambiar a modo claro', darkTheme: 'Cambiar a modo oscuro', skip: 'Saltar al contenido',
-    role: 'Ingeniero de software · IA y backend', intro: 'Desarrollo software y trabajo en inteligencia artificial aplicada e investigación en imágenes médicas.', explore: 'Ver mis proyectos',
-    about: 'Sobre mí', aboutTitle: 'Hola, soy Martino.', bio1: 'Soy ingeniero en sistemas de Tandil, Argentina, y me enfoco en el desarrollo backend y la inteligencia artificial. Disfruto crear software que conecte la investigación con necesidades concretas.',
-    bio2: 'Además de trabajar como ingeniero backend de IA, estoy realizando un doctorado en INTIA–UNICEN. Investigo inteligencia artificial para el procesamiento de imágenes médicas y otros proyectos del grupo.', cv: 'Descargar mi CV', experience: 'Experiencia', education: 'Formación',
+    role: 'Ingeniero de software · IA y backend', explore: 'Ver mis proyectos',
+    about: 'Un poco sobre mí', aboutTitle: 'Hola, soy Martino.', bio1: 'Soy ingeniero en sistemas, oriundo de Tandil, Argentina, y me enfoco en el desarrollo backend y la inteligencia artificial. Disfruto crear software innovador que genere un impacto positivo y tangible en las personas que lo usan. También me motiva emprender e impulsar ideas nuevas, algo que me llevó a participar en distintos proyectos. Actualmente trabajo en dos de ellos.',
+    bio2: 'A la par de estos proyectos, estoy realizando un doctorado en INTIA–UNICEN, donde investigo el uso de inteligencia artificial para el procesamiento de imágenes médicas y otras áreas relacionadas.', cv: 'Descargar mi CV', experience: 'Experiencia', education: 'Formación',
     educationItems: ['Investigación doctoral en imágenes médicas e IA', 'Ingeniería de Sistemas', 'Diplomatura Universitaria en Inteligencia Artificial'], educationStatus: ['INTIA · UNICEN — En curso', 'UNICEN — 2020–2025', 'UNICEN — 2025'],
     projects: 'Proyectos', selectedWork: 'Proyectos destacados', projectsIntro: 'Una selección de proyectos de software, inteligencia artificial e investigación.', skills: 'Habilidades', tools: 'Tecnologías que utilizo', skillsIntro: 'Tecnologías y prácticas de mi trabajo y mi investigación.',
     contact: 'Contacto', contactTitle: 'Hablemos.', contactIntro: '¿Tenés un proyecto, una oportunidad o alguna consulta? Me gustaría conocerla.', backToTop: 'Volver arriba', portraitAlt: 'Retrato ilustrado de Martino Ferrero',
@@ -341,7 +341,6 @@ function App() {
         <div className="hero-copy">
           <h1 id="hero-title">Martino Ferrero</h1>
           <p className="hero-role">{text.role}</p>
-          <p className="hero-intro">{text.intro}</p>
           <a className="outline-link" href="#projects">{text.explore} <Arrow /></a>
         </div>
         <Connections theme={theme} />

@@ -50,7 +50,6 @@ svg { display: block; }
 .hero-copy { position: relative; z-index: 1; width: min(1100px, calc(100% - 48px)); margin-top: clamp(150px, 12vw, 183px); text-align: center; }
 .hero h1 { font-size: clamp(3.4rem, 6.65vw, 6rem); font-weight: 600; letter-spacing: -.035em; line-height: 1.05; text-wrap: balance; }
 .hero-role { margin-top: 12px; color: #e0e3ee; font-size: clamp(1.5rem, 3.1vw, 2.85rem); line-height: 1.25; letter-spacing: -.025em; }
-.hero-intro { margin: 24px auto 0; color: #b3b8ca; font-size: clamp(1rem, 1.85vw, 1.7rem); line-height: 1.5; }
 .outline-link { display: inline-flex; justify-content: center; align-items: center; gap: 18px; min-height: 62px; margin-top: 36px; padding: 0 28px; border: 1px solid #6878bd; border-radius: 10px; color: #e0e8ff; font-size: 18px; transition: background .25s ease, border-color .25s ease, transform .25s ease; }
 .outline-link:hover { background: #181d30; border-color: #a2b0ef; transform: translateY(-2px); }
 .outline-link svg, .text-link svg, .contact-links svg, .contact-email svg { width: 19px; height: 19px; flex: none; transition: transform .25s ease; }
@@ -127,7 +126,6 @@ svg { display: block; }
 :root[data-theme='light'] .language-switch button:hover { color: #202331; }
 :root[data-theme='light'] .language-switch button.selected, :root[data-theme='light'] .theme-switch:hover { color: #34467f; background: #dce0ed; }
 :root[data-theme='light'] .hero-role { color: #363b4d; }
-:root[data-theme='light'] .hero-intro { color: #50586b; }
 :root[data-theme='light'] .outline-link { color: #394b85; border-color: #6c7db4; }
 :root[data-theme='light'] .outline-link:hover { background: #e1e4f0; border-color: #465b9d; }
 :root[data-theme='light'] .section-title h2 { color: #62697b; }
@@ -150,7 +148,6 @@ svg { display: block; }
   .hero-copy { margin-top: clamp(156px, 26vh, 210px); }
   .hero h1 { font-size: clamp(3rem, 11vw, 4.5rem); }
   .hero-role { margin-top: 17px; font-size: clamp(1.25rem, 5vw, 1.8rem); }
-  .hero-intro { max-width: 34ch; margin-top: 22px; font-size: 16px; }
   .outline-link { min-height: 54px; margin-top: 29px; font-size: 16px; }
   .page-content { width: calc(100% - 48px); }
   .content-section { margin-bottom: 120px; }
