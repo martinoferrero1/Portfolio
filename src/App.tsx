@@ -15,16 +15,17 @@ const copy = {
     educationItems: ['PhD research in medical imaging and AI', 'Bachelor’s Degree in Systems Engineering', 'University Diploma in Artificial Intelligence'], educationStatus: ['INTIA · UNICEN — In progress', 'UNICEN — 2020–2025', 'UNICEN — 2025'],
     projects: 'Projects', selectedWork: 'Selected work', projectsIntro: 'A selection of projects across software, AI and research.', skills: 'Skills', tools: 'Tools I work with', skillsIntro: 'Technologies and practices from my work and research.',
     contact: 'Contact', contactFormIntro: 'Fill out the form and your email app will open with the message ready to send.', fullName: 'Full name', company: 'Company', emailAddress: 'Email address', message: 'Message', namePlaceholder: 'Your name', companyPlaceholder: 'Your company', emailPlaceholder: 'you@example.com', messagePlaceholder: 'Write your message here...', send: 'Send message', contactTitle: 'Let’s get in touch!', contactIntro: 'Have a project, opportunity, or question in mind? I’d be glad to hear from you.', backToTop: 'Back to top', portraitAlt: 'Illustrated portrait of Martino Ferrero',
-    projectTypes: ['Health technology · Co-founder', 'Personal project · In progress', 'Team project · In progress', 'Research · INTIA–UNICEN', 'University project', 'University project', 'Private clinic'],
+    projectTypes: ['Health technology · Co-founder', 'Personal project · In progress', 'Team project · In progress', 'Research · INTIA–UNICEN', 'Personal project', 'University project', 'University project', 'Private clinic'],
     projectDescriptions: [
       'A platform for the management, monitoring and diagnostic evaluation of people with Parkinson’s disease. I work on backend services and contribute to the integration of AI and computer vision for motor assessments.',
-      'A platform for discovering personal style, with a conversational assistant that combines natural language, reference images and product search to help users explore garments and outfits.',
+      'A platform for discovering personal style, with a conversational assistant, product search and visual design tools to help users explore garments and outfits.',
       'A project developed with a team of developers, focused on digitizing and automating processes in the quarry industry.',
       'A degree project exploring image processing and deep learning for lumbar spine segmentation on DXA images, with a cross-platform application for the workflow.',
+      'An API for asking questions about stories and tales in DOCX files, with a simple frontend, RAG observability metrics, and retrieval and reranking techniques.',
       'A specialized, multi-domain RAG assistant for asking a wide range of questions about all kinds of specialized documents, organized by chat.',
       'A custom compiler covering lexical, syntactic and semantic analysis through assembly code generation.',
       'A WhatsApp chatbot for parents of pediatric patients that automates registration, appointments and FAQs, integrating with clinic systems for staff availability and patient data.',
-    ], projectDetails: ['Part of IncuBAte. Neurollow was an invited startup at Crossing Over LATAM 2026.', 'The assistant is available in the beta; additional creation and catalog experiences are in development.', 'An S&E project. The repositories are private.', 'The work was accepted for presentation at SIPAIM 2025 and publication in IEEE Xplore.', '', '', ''], projectLinks: ['View repository'],
+    ], projectDetails: ['Part of IncuBAte. Neurollow was an invited startup at Crossing Over LATAM 2026.', '', 'An S&E project. The repositories are private.', 'The work was accepted for presentation at SIPAIM 2025 and publication in IEEE Xplore.', '', '', '', ''], projectLinks: ['View repository'],
     experienceRoles: ['AI Backend Engineer', 'PhD Researcher', 'Co-founder', 'Co-founder', 'Algorithmic Trading Developer', 'Computer Vision & Deep Learning Developer'],
     experienceDescriptions: ['Backend services, LLM applications, cloud deployments and production AI workflows.', 'Research in artificial intelligence and medical image processing, including work related to bone health.', 'Co-founded a company with a team of developers to digitize and automate processes for businesses in specialized industries.', 'Backend engineering and AI integration for a Parkinson’s care platform.', 'Trading strategies and internal automation tools for financial clients.', 'Lumbar spine segmentation for osteoporosis assessment using DXA images.'], skillGroups: ['Languages', 'Backend', 'AI & machine learning', 'Data & infrastructure', 'Architecture & integration', 'AI systems & practices'], approachItems: ['Hexagonal architecture, microservices, event-driven systems, Kafka, WebSockets, external API integration', 'AI agents and orchestration, retrieval-augmented generation (RAG), vector search, agent guardrails, evaluation, operations and observability, image processing'],
   },
@@ -36,16 +37,17 @@ const copy = {
     educationItems: ['Investigación doctoral en imágenes médicas e IA', 'Ingeniería de Sistemas', 'Diplomatura Universitaria en Inteligencia Artificial'], educationStatus: ['INTIA · UNICEN — En curso', 'UNICEN — 2020–2025', 'UNICEN — 2025'],
     projects: 'Proyectos', selectedWork: 'Proyectos destacados', projectsIntro: 'Una selección de proyectos de software, inteligencia artificial e investigación.', skills: 'Habilidades', tools: 'Tecnologías que utilizo', skillsIntro: 'Tecnologías y prácticas de mi trabajo y mi investigación.',
     contact: 'Contacto', contactFormIntro: 'Completá el formulario y se abrirá un correo con el mensaje listo para enviar.', fullName: 'Nombre y apellido', company: 'Empresa', emailAddress: 'Correo electrónico', message: 'Mensaje', namePlaceholder: 'Tu nombre', companyPlaceholder: 'Tu empresa', emailPlaceholder: 'vos@ejemplo.com', messagePlaceholder: 'Escribí tu mensaje acá...', send: 'Enviar mensaje', contactTitle: 'Hablemos!', contactIntro: '¿Tenés un proyecto, una oportunidad o alguna consulta? Me gustaría conocerla.', backToTop: 'Volver arriba', portraitAlt: 'Retrato ilustrado de Martino Ferrero',
-    projectTypes: ['Tecnología para la salud · Cofundador', 'Proyecto personal · En curso', 'Proyecto en equipo · En curso', 'Investigación · INTIA–UNICEN', 'Proyecto universitario', 'Proyecto universitario', 'Clínica privada'],
+    projectTypes: ['Tecnología para la salud · Cofundador', 'Proyecto personal · En curso', 'Proyecto en equipo · En curso', 'Investigación · INTIA–UNICEN', 'Proyecto personal', 'Proyecto universitario', 'Proyecto universitario', 'Clínica privada'],
     projectDescriptions: [
       'Plataforma para la gestión, el seguimiento y la evaluación diagnóstica de personas con enfermedad de Parkinson. Trabajo en servicios backend y en la integración de inteligencia artificial y visión por computadora para evaluar habilidades motoras.',
-      'Plataforma para descubrir el estilo personal, con un asistente conversacional que combina lenguaje natural, imágenes de referencia y búsqueda de productos para explorar prendas y conjuntos.',
+      'Plataforma para descubrir el estilo personal, con un asistente conversacional, búsqueda de productos y herramientas de diseño visual para explorar prendas y conjuntos.',
       'Proyecto realizado junto a un equipo de desarrollo para digitalizar y automatizar procesos de la industria de canteras.',
       'Trabajo final de carrera sobre procesamiento de imágenes y aprendizaje profundo para segmentar la columna lumbar en imágenes DXA, con una aplicación multiplataforma para ese flujo de trabajo.',
+      'API para consultar historias y cuentos en archivos DOCX, con un frontend sencillo, métricas de observabilidad específicas de RAG y técnicas de recuperación y reranking.',
       'Asistente RAG especializado y multirubro para realizar consultas variadas sobre todo tipo de documentos especializados, organizadas por chat.',
       'Compilador desarrollado desde cero que abarca el análisis léxico, sintáctico y semántico hasta la generación de código assembler.',
       'Chatbot de WhatsApp para familias de pacientes pediátricos que automatiza el registro, los turnos y las preguntas frecuentes, integrado con los sistemas de la clínica para consultar disponibilidad y datos de pacientes.',
-    ], projectDetails: ['Parte de IncuBAte. Neurollow fue una de las startups invitadas a Crossing Over LATAM 2026.', 'El asistente ya está disponible en la versión beta; se están desarrollando nuevas funciones de creación y catálogo.', 'Un proyecto de S&E. Los repositorios son privados.', 'El trabajo fue aceptado para su presentación en SIPAIM 2025 y su publicación en IEEE Xplore.', '', '', ''], projectLinks: ['Ver repositorio'],
+    ], projectDetails: ['Parte de IncuBAte. Neurollow fue una de las startups invitadas a Crossing Over LATAM 2026.', '', 'Un proyecto de S&E. Los repositorios son privados.', 'El trabajo fue aceptado para su presentación en SIPAIM 2025 y su publicación en IEEE Xplore.', '', '', '', ''], projectLinks: ['Ver repositorio'],
     experienceRoles: ['Ingeniero backend de IA', 'Investigador doctoral', 'Cofundador', 'Cofundador', 'Desarrollador de trading algorítmico', 'Desarrollador de visión por computadora y deep learning'],
     experienceDescriptions: ['Servicios backend, aplicaciones con modelos de lenguaje, despliegues en la nube y flujos de IA en producción.', 'Investigación en inteligencia artificial y procesamiento de imágenes médicas, con trabajos relacionados con la salud ósea.', 'Empresa fundada junto a un equipo de desarrolladores para digitalizar y automatizar procesos en empresas de rubros específicos.', 'Desarrollo backend e integración de IA para una plataforma de atención a personas con Parkinson.', 'Estrategias de trading y herramientas de automatización interna para clientes financieros.', 'Segmentación de la columna lumbar para evaluar osteoporosis mediante imágenes DXA.'], skillGroups: ['Lenguajes', 'Backend', 'IA y aprendizaje automático', 'Datos e infraestructura', 'Arquitectura e integración', 'Sistemas y prácticas de IA'], approachItems: ['Arquitectura hexagonal, microservicios, sistemas orientados a eventos, Kafka, WebSockets, integración con APIs externas', 'Agentes de IA y orquestación, generación aumentada por recuperación (RAG), búsqueda vectorial, controles de seguridad, evaluación, operación y observabilidad de agentes, procesamiento de imágenes'],
   },
@@ -63,8 +65,8 @@ const projects = [
   },
   {
     name: 'Lookeate', type: 'Personal project · In progress',
-    description: 'A platform for discovering personal style, with a conversational assistant that combines natural language, reference images and product search to help users explore garments and outfits.',
-    detail: 'The assistant is available in the beta; additional creation and catalog experiences are in development.',
+    description: 'A platform for discovering personal style, with a conversational assistant, product search and visual design tools to help users explore garments and outfits.',
+    detail: '',
     tools: 'Python · FastAPI · LangGraph · RAG · Next.js · PostgreSQL · SQLite · FAISS',
     links: [['View repository', 'https://github.com/martinoferrero1/multimodal-clothing-assistance-system']],
   },
@@ -78,6 +80,12 @@ const projects = [
     description: 'A degree project exploring image processing and deep learning for lumbar spine segmentation on DXA images, with a cross-platform application for the workflow.',
     detail: 'The work was accepted for presentation at SIPAIM 2025 and publication in IEEE Xplore.',
     tools: 'Python · JavaScript · OpenCV · NumPy · Matplotlib · PyTorch · U-Net · Flask · React · Electron', links: [['View repository', 'https://github.com/martinoferrero1/DXA-Segmentation-Desktop-Application']],
+  },
+  {
+    name: 'StoriesContextRAG', type: 'Personal project',
+    description: 'An API for asking questions about stories and tales in DOCX files, with a simple frontend, RAG observability metrics, and retrieval and reranking techniques.',
+    detail: '',
+    tools: 'Python · FastAPI · ChromaDB · LangChain · Streamlit', links: [['View repository', 'https://github.com/martinoferrero1/Stories-Context-RAG']],
   },
   {
     name: 'Chat-anne', type: 'University project',
@@ -428,7 +436,7 @@ function App() {
           <div className="section-intro" data-reveal><h3 id="projects-heading">{text.selectedWork}</h3><p>{text.projectsIntro}</p></div>
           <div className="project-list">
             {projects.map((project, index) => <article className="project" key={project.name} data-reveal>
-              <div className="project-heading"><h4>{locale === 'es' ? ['Neurollow', 'Lookeate', 'Digitalización de procesos en canteras', 'Segmentador DXA de columna vertebral', 'Chat-anne', 'Mi propio compilador', 'Chatbot para clínica pediátrica'][index] : project.name}</h4><p>{text.projectTypes[index]}</p></div>
+              <div className="project-heading"><h4>{locale === 'es' ? ['Neurollow', 'Lookeate', 'Digitalización de procesos en canteras', 'Segmentador DXA de columna vertebral', 'StoriesContextRAG', 'Chat-anne', 'Mi propio compilador', 'Chatbot para clínica pediátrica'][index] : project.name}</h4><p>{text.projectTypes[index]}</p></div>
               <div className="project-body"><p>{text.projectDescriptions[index]}</p>{text.projectDetails[index] && <p>{text.projectDetails[index]}</p>}<p className="project-tools">{project.tools}</p>
                 {project.links.length > 0 && <div className="project-links">{project.links.map(([label, href]) => <a className="text-link" key={href} href={href} target="_blank" rel="noreferrer">{locale === 'es' && label === 'View repository' ? text.projectLinks[0] : locale === 'es' && label === 'Website' ? 'Sitio web' : label} <Arrow /></a>)}</div>}
               </div>
@@ -456,15 +464,18 @@ function App() {
               </div>
               <button className="contact-submit" type="submit"><span>{text.send}</span><Arrow /></button>
             </form>
-            <footer className="contact-card-footer">
-              <a className="contact-email" href="mailto:martinoferrero02@gmail.com"><ContactIcon name="mail" /><span>martinoferrero02@gmail.com</span></a>
-              <div className="contact-links" aria-label={locale === 'es' ? 'Redes profesionales' : 'Professional profiles'}>{contactLinks.filter(({ icon }) => icon !== 'mail').map(({ label, href, icon }) => <a key={icon} href={href} target="_blank" rel="noreferrer" aria-label={label} title={label}><ContactIcon name={icon} /><span>{label}</span></a>)}</div>
-            </footer>
           </div>
         </section>
       </div>
     </main>
-    <footer className="footer"><span>© {new Date().getFullYear()} Martino Ferrero</span><a href="#home">{text.backToTop}</a></footer>
+    <footer className="footer">
+      <span className="footer-copyright">© {new Date().getFullYear()} Martino Ferrero</span>
+      <nav className="footer-links" aria-label={locale === 'es' ? 'Datos de contacto' : 'Contact details'}>
+        <a href="mailto:martinoferrero02@gmail.com"><ContactIcon name="mail" /><span>martinoferrero02@gmail.com</span></a>
+        <a href="https://github.com/martinoferrero1" target="_blank" rel="noreferrer"><ContactIcon name="github" /><span>martinoferrero1</span></a>
+        <a href="https://www.linkedin.com/in/martino-ferrero-17761121a/" target="_blank" rel="noreferrer"><ContactIcon name="linkedin" /><span>LinkedIn</span></a>
+      </nav>
+    </footer>
   </>
 }
 
