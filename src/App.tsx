@@ -86,7 +86,7 @@ const projects = [
   },
 
   {
-    name: 'Compiler', type: 'University project',
+    name: 'My own compiler', type: 'University project',
     description: 'A custom compiler covering lexical, syntactic and semantic analysis through assembly code generation.',
     detail: '', tools: 'Java · YACC · Assembly', links: [['View repository', 'https://github.com/martinoferrero1/Compiler']],
   },
@@ -428,7 +428,7 @@ function App() {
           <div className="section-intro" data-reveal><h3 id="projects-heading">{text.selectedWork}</h3><p>{text.projectsIntro}</p></div>
           <div className="project-list">
             {projects.map((project, index) => <article className="project" key={project.name} data-reveal>
-              <div className="project-heading"><h4>{locale === 'es' ? ['Neurollow', 'Lookeate', 'Digitalización de procesos en canteras', 'Segmentador DXA de columna vertebral', 'Chat-anne', 'Compilador', 'Chatbot para clínica pediátrica'][index] : project.name}</h4><p>{text.projectTypes[index]}</p></div>
+              <div className="project-heading"><h4>{locale === 'es' ? ['Neurollow', 'Lookeate', 'Digitalización de procesos en canteras', 'Segmentador DXA de columna vertebral', 'Chat-anne', 'Mi propio compilador', 'Chatbot para clínica pediátrica'][index] : project.name}</h4><p>{text.projectTypes[index]}</p></div>
               <div className="project-body"><p>{text.projectDescriptions[index]}</p>{text.projectDetails[index] && <p>{text.projectDetails[index]}</p>}<p className="project-tools">{project.tools}</p>
                 {project.links.length > 0 && <div className="project-links">{project.links.map(([label, href]) => <a className="text-link" key={href} href={href} target="_blank" rel="noreferrer">{locale === 'es' && label === 'View repository' ? text.projectLinks[0] : locale === 'es' && label === 'Website' ? 'Sitio web' : label} <Arrow /></a>)}</div>}
               </div>
