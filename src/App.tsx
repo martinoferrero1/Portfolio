@@ -1,5 +1,5 @@
 import { type FormEvent, useEffect, useRef, useState } from 'react'
-import { LuMail } from 'react-icons/lu'
+import { LuMail, LuMenu, LuX } from 'react-icons/lu'
 import { FaGithub, FaLinkedinIn } from 'react-icons/fa6'
 import portrait from '../assets/plates/portrait.png'
 
@@ -9,6 +9,7 @@ type Theme = 'dark' | 'light'
 const copy = {
   en: {
     navigation: ['Home', 'About', 'Projects', 'Skills', 'Contact'], navLabel: 'Main navigation', languageLabel: 'Choose language', lightTheme: 'Switch to light mode', darkTheme: 'Switch to dark mode', skip: 'Skip to content',
+    openMenu: 'Open menu', closeMenu: 'Close menu',
     role: 'Software Engineer · AI & Backend', explore: 'Explore my work',
     about: 'About me', aboutTitle: 'Hi, I’m Martino.', bio1: 'I’m a systems engineer from Tandil, Argentina, focused on backend development and artificial intelligence. I enjoy building innovative software that makes a meaningful, positive difference for the people who use it. I’m also drawn to entrepreneurship and bringing new ideas to life, which has led me to take part in several projects. I’m currently working on two of them.',
     bio2: 'Alongside these projects, I’m pursuing a PhD at INTIA–UNICEN, where I research the use of AI in medical image processing and other related areas.', cv: 'Download my CV', experience: 'Experience', education: 'Education', certifications: 'Licenses & certifications',
@@ -31,6 +32,7 @@ const copy = {
   },
   es: {
     navigation: ['Inicio', 'Sobre mí', 'Proyectos', 'Habilidades', 'Contacto'], navLabel: 'Navegación principal', languageLabel: 'Elegir idioma', lightTheme: 'Cambiar a modo claro', darkTheme: 'Cambiar a modo oscuro', skip: 'Saltar al contenido',
+    openMenu: 'Abrir menú', closeMenu: 'Cerrar menú',
     role: 'Ingeniero de software · IA y backend', explore: 'Ver mis proyectos',
     about: 'Un poco sobre mí', aboutTitle: 'Hola, soy Martino.', bio1: 'Soy ingeniero en sistemas, oriundo de Tandil, Argentina, y me enfoco en el desarrollo backend y la inteligencia artificial. Disfruto crear software innovador que genere un impacto positivo y tangible en las personas que lo usan. También me motiva emprender e impulsar ideas nuevas, algo que me llevó a participar en distintos proyectos. Actualmente trabajo en dos de ellos.',
     bio2: 'A la par de estos proyectos, estoy realizando un doctorado en INTIA–UNICEN, donde investigo el uso de inteligencia artificial para el procesamiento de imágenes médicas y otras áreas relacionadas.', cv: 'Descargar mi CV', experience: 'Experiencia', education: 'Formación', certifications: 'Licencias y certificaciones',
@@ -301,10 +303,40 @@ function App() {
     try { return window.localStorage.getItem('portfolio-language') === 'es' ? 'es' : 'en' } catch { return 'en' }
   })
   const [active, setActive] = useState('home')
+  const [menuOpen, setMenuOpen] = useState(false)
+  const headerRef = useRef<HTMLElement>(null)
+  const menuButtonRef = useRef<HTMLButtonElement>(null)
   const [theme, setTheme] = useState<Theme>(() => {
     try { return window.localStorage.getItem('portfolio-theme') === 'light' ? 'light' : 'dark' } catch { return 'dark' }
   })
   const text = copy[locale]
+
+  useEffect(() => {
+    const desktop = window.matchMedia('(min-width: 961px)')
+    const closeOnResize = () => setMenuOpen(false)
+    desktop.addEventListener('change', closeOnResize)
+    return () => desktop.removeEventListener('change', closeOnResize)
+  }, [])
+
+  useEffect(() => {
+    if (!menuOpen) return
+    const closeOnOutsideClick = (event: PointerEvent) => {
+      if (event.target instanceof Node && !headerRef.current?.contains(event.target)) setMenuOpen(false)
+    }
+    const closeOnEscape = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') {
+        setMenuOpen(false)
+        menuButtonRef.current?.focus()
+      }
+    }
+    document.addEventListener('pointerdown', closeOnOutsideClick)
+    document.addEventListener('keydown', closeOnEscape)
+    return () => {
+      document.removeEventListener('pointerdown', closeOnOutsideClick)
+      document.removeEventListener('keydown', closeOnEscape)
+    }
+  }, [menuOpen])
+
   const handleContactSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault()
     const values = new FormData(event.currentTarget)
@@ -369,15 +401,22 @@ function App() {
 
   return <>
     <a className="skip-link" href="#about">{text.skip}</a>
-    <header className="site-header">
+    <header className="site-header" ref={headerRef} onBlur={(event) => {
+      if (!event.currentTarget.contains(event.relatedTarget)) setMenuOpen(false)
+    }}>
       <div className="header-inner">
-        <nav className="navigation" aria-label={text.navLabel}>
-          {navigation.map((id, index) => <a key={id} href={`#${id}`} className={active === id ? 'active' : ''} aria-current={active === id ? 'location' : undefined}>{text.navigation[index]}</a>)}
-        </nav>
-        <div className="header-controls">
+        <button className="menu-toggle" type="button" ref={menuButtonRef} aria-expanded={menuOpen} aria-controls="header-menu" aria-label={menuOpen ? text.closeMenu : text.openMenu} onClick={() => setMenuOpen((open) => !open)}>
+          {menuOpen ? <LuX aria-hidden="true" /> : <LuMenu aria-hidden="true" />}
+        </button>
+        <div className={`header-menu${menuOpen ? ' is-open' : ''}`} id="header-menu">
+          <nav className="navigation" aria-label={text.navLabel}>
+            {navigation.map((id, index) => <a key={id} href={`#${id}`} className={active === id ? 'active' : ''} aria-current={active === id ? 'location' : undefined} onClick={() => setMenuOpen(false)}>{text.navigation[index]}</a>)}
+          </nav>
           <nav className="header-social" aria-label={locale === 'es' ? 'Enlaces de contacto' : 'Contact links'}>
             {contactLinks.map(({ label, href, icon }) => <a key={icon} href={href} aria-label={label} title={label} {...(icon === 'mail' ? {} : { target: '_blank', rel: 'noreferrer' })}><ContactIcon name={icon} /></a>)}
           </nav>
+        </div>
+        <div className="header-controls">
           <div className="language-switch" role="group" aria-label={text.languageLabel}>
             {(['es', 'en'] as const).map((language) => <button key={language} type="button" lang={language} aria-pressed={locale === language} className={locale === language ? 'selected' : ''} onClick={() => setLocale(language)}>{language.toUpperCase()}</button>)}
           </div>

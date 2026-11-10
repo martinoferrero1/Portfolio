@@ -71,6 +71,8 @@ Controls have modest rounding. Thin horizontal dividers and a simple timeline or
 
 The outlined project link is the primary action. Inline links use a small arrow and a restrained hover transition. Navigation remains fixed and marks the current section.
 
+At widths up to 960px, a hamburger button reveals the section links and social links in a vertical panel below the header. Language and theme controls stay visible, with touch targets of at least 44px. The panel closes when choosing a section, clicking outside, pressing Escape, or leaving the header with the keyboard. Escape returns focus to the menu button.
+
 ## Do's and Don'ts
 
 - Do keep content visible and legible when motion is reduced.
