@@ -5,6 +5,7 @@ import portrait from '../assets/plates/portrait.png'
 
 type Locale = 'en' | 'es'
 type Theme = 'dark' | 'light'
+type ContactStatus = 'idle' | 'sending' | 'sent' | 'invalid' | 'error' | 'unavailable'
 
 const copy = {
   en: {
@@ -15,7 +16,8 @@ const copy = {
     bio2: 'Alongside these projects, I’m pursuing a PhD at INTIA–UNICEN, where I research the use of AI in medical image processing and other related areas.', cv: 'Download my CV', experience: 'Experience', education: 'Education', certifications: 'Licenses & certifications',
     educationItems: ['PhD research in medical imaging and AI', 'Bachelor’s Degree in Systems Engineering', 'University Diploma in Artificial Intelligence'], educationStatus: ['INTIA · UNICEN — In progress', 'UNICEN — 2020–2025', 'UNICEN — 2025'],
     projects: 'Projects', selectedWork: 'Selected work', projectsIntro: 'A selection of projects across software, AI and research.', skills: 'Skills', tools: 'Tools I work with', skillsIntro: 'Technologies and practices from my work and research.',
-    contact: 'Contact', contactFormIntro: 'Fill out the form and your email app will open with the message ready to send.', fullName: 'Full name', company: 'Company', emailAddress: 'Email address', message: 'Message', namePlaceholder: 'Your name', companyPlaceholder: 'Your company', emailPlaceholder: 'you@example.com', messagePlaceholder: 'Write your message here...', send: 'Send message', contactTitle: 'Let’s get in touch!', contactIntro: 'Have a project, opportunity, or question in mind? I’d be glad to hear from you.', backToTop: 'Back to top', portraitAlt: 'Illustrated portrait of Martino Ferrero',
+    contact: 'Contact', contactFormIntro: 'Leave your email so I can reply.', fullName: 'Full name', company: 'Company', emailAddress: 'Email address', message: 'Message', namePlaceholder: 'Your name', companyPlaceholder: 'Your company', emailPlaceholder: 'you@example.com', messagePlaceholder: 'Write your message here...', send: 'Send message', sending: 'Sending…', contactTitle: 'Let’s get in touch!', contactIntro: 'Have a project, opportunity, or question in mind? I’d be glad to hear from you.', backToTop: 'Back to top', portraitAlt: 'Illustrated portrait of Martino Ferrero',
+    contactFeedback: { idle: '', sending: '', sent: 'Thanks! Your message was sent.', invalid: 'Enter your name and a message.', error: 'Couldn’t send your message. Please try again.', unavailable: 'The form is currently unavailable. You can reach me at' },
     projectTypes: ['Health technology · Co-founder', 'Personal project · In progress', 'Team project · In progress', 'Research · INTIA–UNICEN', 'Personal project', 'University project', 'University project', 'Private clinic'],
     projectDescriptions: [
       'A platform for the management, monitoring and diagnostic evaluation of people with Parkinson’s disease. I work on backend services and contribute to the integration of AI and computer vision for motor assessments.',
@@ -38,7 +40,8 @@ const copy = {
     bio2: 'A la par de estos proyectos, estoy realizando un doctorado en INTIA–UNICEN, donde investigo el uso de inteligencia artificial para el procesamiento de imágenes médicas y otras áreas relacionadas.', cv: 'Descargar mi CV', experience: 'Experiencia', education: 'Formación', certifications: 'Licencias y certificaciones',
     educationItems: ['Investigación doctoral en imágenes médicas e IA', 'Ingeniería de Sistemas', 'Diplomatura Universitaria en Inteligencia Artificial'], educationStatus: ['INTIA · UNICEN — En curso', 'UNICEN — 2020–2025', 'UNICEN — 2025'],
     projects: 'Proyectos', selectedWork: 'Proyectos destacados', projectsIntro: 'Una selección de proyectos de software, inteligencia artificial e investigación.', skills: 'Habilidades', tools: 'Tecnologías que utilizo', skillsIntro: 'Tecnologías y prácticas de mi trabajo y mi investigación.',
-    contact: 'Contacto', contactFormIntro: 'Completá el formulario y se abrirá un correo con el mensaje listo para enviar.', fullName: 'Nombre y apellido', company: 'Empresa', emailAddress: 'Correo electrónico', message: 'Mensaje', namePlaceholder: 'Tu nombre', companyPlaceholder: 'Tu empresa', emailPlaceholder: 'vos@ejemplo.com', messagePlaceholder: 'Escribí tu mensaje acá...', send: 'Enviar mensaje', contactTitle: 'Hablemos!', contactIntro: '¿Tenés un proyecto, una oportunidad o alguna consulta? Me gustaría conocerla.', backToTop: 'Volver arriba', portraitAlt: 'Retrato ilustrado de Martino Ferrero',
+    contact: 'Contacto', contactFormIntro: 'Dejame tu correo para que pueda responderte.', fullName: 'Nombre y apellido', company: 'Empresa', emailAddress: 'Correo electrónico', message: 'Mensaje', namePlaceholder: 'Tu nombre', companyPlaceholder: 'Tu empresa', emailPlaceholder: 'vos@ejemplo.com', messagePlaceholder: 'Escribí tu mensaje acá...', send: 'Enviar mensaje', sending: 'Enviando…', contactTitle: 'Hablemos!', contactIntro: '¿Tenés un proyecto, una oportunidad o alguna consulta? Me gustaría conocerla.', backToTop: 'Volver arriba', portraitAlt: 'Retrato ilustrado de Martino Ferrero',
+    contactFeedback: { idle: '', sending: '', sent: '¡Gracias! Tu mensaje se envió.', invalid: 'Escribí tu nombre y un mensaje.', error: 'No se pudo enviar tu mensaje. Intentá de nuevo.', unavailable: 'El formulario no está disponible por ahora. Podés escribirme a' },
     projectTypes: ['Tecnología para la salud · Cofundador', 'Proyecto personal · En curso', 'Proyecto en equipo · En curso', 'Investigación · INTIA–UNICEN', 'Proyecto personal', 'Proyecto universitario', 'Proyecto universitario', 'Clínica privada'],
     projectDescriptions: [
       'Plataforma para la gestión, el seguimiento y la evaluación diagnóstica de personas con enfermedad de Parkinson. Trabajo en servicios backend y en la integración de inteligencia artificial y visión por computadora para evaluar habilidades motoras.',
@@ -129,8 +132,11 @@ function Arrow() {
   return <svg aria-hidden="true" viewBox="0 0 20 20" fill="none"><path d="M3 10h13M11 5l5 5-5 5" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" /></svg>
 }
 
+const contactEmail = 'martinoferrero02@gmail.com'
+const contactAccessKey = import.meta.env.VITE_WEB3FORMS_ACCESS_KEY?.trim()
+
 const contactLinks = [
-  { label: 'Email', href: 'mailto:martinoferrero02@gmail.com', icon: 'mail' },
+  { label: 'Email', href: `mailto:${contactEmail}`, icon: 'mail' },
   { label: 'GitHub', href: 'https://github.com/martinoferrero1', icon: 'github' },
   { label: 'LinkedIn', href: 'https://www.linkedin.com/in/martino-ferrero-17761121a/', icon: 'linkedin' },
 ] as const
@@ -304,6 +310,8 @@ function App() {
   })
   const [active, setActive] = useState('home')
   const [menuOpen, setMenuOpen] = useState(false)
+  const [contactStatus, setContactStatus] = useState<ContactStatus>('idle')
+  const isSending = contactStatus === 'sending'
   const headerRef = useRef<HTMLElement>(null)
   const menuButtonRef = useRef<HTMLButtonElement>(null)
   const [theme, setTheme] = useState<Theme>(() => {
@@ -337,16 +345,52 @@ function App() {
     }
   }, [menuOpen])
 
-  const handleContactSubmit = (event: FormEvent<HTMLFormElement>) => {
+  const handleContactSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault()
-    const values = new FormData(event.currentTarget)
-    const name = String(values.get('name') ?? '')
-    const company = String(values.get('company') ?? '')
-    const email = String(values.get('email') ?? '')
-    const message = String(values.get('message') ?? '')
-    const subject = locale === 'es' ? `Mensaje de ${name}` : `Message from ${name}`
-    const body = `${text.fullName}: ${name}\n${text.company}: ${company || '—'}\n${text.emailAddress}: ${email}\n\n${message}`
-    window.location.href = `mailto:martinoferrero02@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`
+    if (isSending) return
+
+    const form = event.currentTarget
+    const values = new FormData(form)
+    const name = String(values.get('name') ?? '').trim()
+    const company = String(values.get('company') ?? '').trim()
+    const email = String(values.get('email') ?? '').trim()
+    const message = String(values.get('message') ?? '').trim()
+    if (!name || !message) {
+      setContactStatus('invalid')
+      return
+    }
+    if (!contactAccessKey) {
+      setContactStatus('unavailable')
+      return
+    }
+
+    values.set('name', name)
+    values.set('company', company)
+    values.set('email', email)
+    values.set('message', message)
+    values.set('access_key', contactAccessKey)
+    values.set('subject', 'Portfolio contact message')
+    values.set('from_name', 'Martino Ferrero Portfolio')
+
+    setContactStatus('sending')
+    try {
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: { Accept: 'application/json' },
+        body: values,
+        signal: AbortSignal.timeout(20_000),
+      })
+      const result: { success?: boolean } | null = response.ok ? await response.json() : null
+      if (result?.success !== true) {
+        setContactStatus('error')
+        return
+      }
+
+      form.reset()
+      setContactStatus('sent')
+    } catch {
+      setContactStatus('error')
+    }
   }
 
   useEffect(() => {
@@ -494,14 +538,19 @@ function App() {
           <div className="section-intro contact-intro" data-reveal><h3 id="contact-heading">{text.contactTitle}</h3><p>{text.contactIntro}</p></div>
           <div className="contact-card" data-reveal>
             <div className="contact-card-header"><p>{text.contactFormIntro}</p></div>
-            <form className="contact-form" onSubmit={handleContactSubmit}>
+            <form className="contact-form" onSubmit={handleContactSubmit} onInput={() => { if (!isSending) setContactStatus('idle') }}>
               <div className="contact-form-fields">
-                <label className="contact-field" htmlFor="contact-name">{text.fullName}<input id="contact-name" name="name" type="text" autoComplete="name" placeholder={text.namePlaceholder} required /></label>
-                <label className="contact-field" htmlFor="contact-company">{text.company}<input id="contact-company" name="company" type="text" autoComplete="organization" placeholder={text.companyPlaceholder} /></label>
-                <label className="contact-field contact-field-wide" htmlFor="contact-email">{text.emailAddress}<input id="contact-email" name="email" type="email" autoComplete="email" placeholder={text.emailPlaceholder} required /></label>
-                <label className="contact-field contact-field-wide" htmlFor="contact-message">{text.message}<textarea id="contact-message" name="message" rows={4} placeholder={text.messagePlaceholder} required /></label>
+                <label className="contact-field" htmlFor="contact-name">{text.fullName}<input id="contact-name" name="name" type="text" autoComplete="name" placeholder={text.namePlaceholder} readOnly={isSending} required /></label>
+                <label className="contact-field" htmlFor="contact-company">{text.company}<input id="contact-company" name="company" type="text" autoComplete="organization" placeholder={text.companyPlaceholder} readOnly={isSending} /></label>
+                <label className="contact-field contact-field-wide" htmlFor="contact-email">{text.emailAddress}<input id="contact-email" name="email" type="email" autoComplete="email" placeholder={text.emailPlaceholder} readOnly={isSending} required /></label>
+                <label className="contact-field contact-field-wide" htmlFor="contact-message">{text.message}<textarea id="contact-message" name="message" rows={4} placeholder={text.messagePlaceholder} readOnly={isSending} required /></label>
               </div>
-              <button className="contact-submit" type="submit"><span>{text.send}</span><Arrow /></button>
+              <input type="checkbox" name="botcheck" autoComplete="off" hidden />
+              <button className="contact-submit" type="submit" disabled={isSending}><span>{isSending ? text.sending : text.send}</span><Arrow /></button>
+              <p className="contact-feedback" data-status={contactStatus} role="status">
+                {text.contactFeedback[contactStatus]}
+                {contactStatus === 'unavailable' && <> <a href={`mailto:${contactEmail}`}>{contactEmail}</a>.</>}
+              </p>
             </form>
           </div>
         </section>
@@ -510,7 +559,7 @@ function App() {
     <footer className="footer">
       <span className="footer-copyright">© {new Date().getFullYear()} Martino Ferrero</span>
       <nav className="footer-links" aria-label={locale === 'es' ? 'Datos de contacto' : 'Contact details'}>
-        <a href="mailto:martinoferrero02@gmail.com"><ContactIcon name="mail" /><span>martinoferrero02@gmail.com</span></a>
+        <a href={`mailto:${contactEmail}`}><ContactIcon name="mail" /><span>{contactEmail}</span></a>
         <a href="https://github.com/martinoferrero1" target="_blank" rel="noreferrer"><ContactIcon name="github" /><span>martinoferrero1</span></a>
         <a href="https://www.linkedin.com/in/martino-ferrero-17761121a/" target="_blank" rel="noreferrer"><ContactIcon name="linkedin" /><span>LinkedIn</span></a>
       </nav>
